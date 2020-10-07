@@ -1,0 +1,64 @@
+<GridLayout rows="*" columns="*" width="100%" height="100%" class="pdtop24">
+    <StackLayout row="0" col="0" class="page page-content">
+        <FlexboxLayout class="page-header" flexDirection="column">
+            <GridLayout rows="auto" columns="*" class="top-header">
+                <Label class="fa backbtn" text="&#xf060;" horizontalAlignment="left" (tap)="back()"></Label>
+                <Label col="0" text="ROMS"></Label>
+            </GridLayout>
+            <Label text="Agency Business(Size Wise)"></Label>
+        </FlexboxLayout>
+
+        <StackLayout class="info-table">
+            <GridLayout rows="auto" columns="*,*,*,*,*" class="table-head">
+                <Label col="0" text="Agency"></Label>
+                <Label col="1" text="Small"></Label>
+                <Label col="2" text="Medium"></Label>
+                <Label col="3" text="Big"></Label>
+                <Label col="4" text="Total"></Label>
+            </GridLayout>
+            <!-- Date Picker Row -->
+            <GridLayout rows="auto" columns="60,*,30,*" class="date-row">
+                <Label col="0" text="From"></Label>
+                <TextField col="1" keyboardType="datetime" hint="dd/mm/yyyy" (tap)="showcalender()"></TextField>
+                <Label col="2" text="To"></Label>
+                <TextField col="3" keyboardType="datetime" hint="dd/mm/yyyy" (tap)="showcalender()"></TextField>
+            </GridLayout>
+
+            <StackLayout class="table-body" height="100%">
+                <ScrollView orientation="vertical">
+                    <StackLayout>
+
+                        <GridLayout rows="auto" columns="*,*,*,*,*" class="table-row">
+                            <Label col="0" text="ABC"></Label>
+                            <Label col="1" text="2000"></Label>
+                            <Label col="2" text="5000"></Label>
+                            <Label col="3" text="7000"></Label>
+                            <Label col="4" text="14000"></Label>
+                        </GridLayout>
+
+                    
+                        <GridLayout rows="auto" columns="*,*,*,*,*" class="table-row">
+                            <Label col="0" text="ABC"></Label>
+                            <Label col="1" text="2000"></Label>
+                            <Label col="2" text="5000"></Label>
+                            <Label col="3" text="7000"></Label>
+                            <Label col="4" text="14000"></Label>
+                        </GridLayout>
+
+                        <!-- Grand Total Row -->
+
+                        <GridLayout rows="auto" columns="*,*,*,*,*" class="total-row">
+                            <Label col="0" text="Total"></Label>
+                            <Label col="1" text="4000"></Label>
+                            <Label col="2" text="10000"></Label>
+                            <Label col="3" text="14000"></Label>
+                            <Label col="4" text="28000"></Label>
+                        </GridLayout>
+
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            
+        </StackLayout> 
+    </StackLayout>
+</GridLayout>

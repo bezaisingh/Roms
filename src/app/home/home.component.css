@@ -1,0 +1,46 @@
+.table-row Label {
+    text-align: center;
+}
+
+.headlogo {
+    horizontal-align: left;
+    vertical-align: center;
+    margin-left: 30;
+    width: 30;
+}
+
+.headtitle {
+    font-size: 18;
+    font-weight: 500;
+    color: #0266b1;
+    text-align: center;
+}
+
+.menu {
+    vertical-align: center;
+    horizontal-align: center;
+    font-size: 24;
+    color: #0266b1
+}
+
+.header {
+    border-bottom-color: #f2f2f2;
+    border-bottom-width: 1
+}
+
+.date-row {
+    padding-left: 10;
+    padding-right: 10;
+}
+
+.date-row Label {
+    vertical-align: center;
+}
+
+.table-head Label {
+    font-size: 14
+}
+
+.table-row Label {
+    font-size: 14
+}

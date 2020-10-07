@@ -1,0 +1,85 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+-->
+<NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+-->
+<ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+ios.position="left">
+</ActionItem>
+<Label class="action-bar-title" text="Home"></Label>
+</ActionBar>
+
+<!-- <GridLayout class="page page-content">
+    <Label class="page-icon fa" text="&#xf015;"></Label>
+    <Label class="page-placeholder" text=""></Label>
+</GridLayout> -->
+
+
+<GridLayout rows="*" columns="*" backgroundColor="#f2f2ff" class="pdtop24">
+    <StackLayout class="page page-content" row="0" col="0">
+        <!-- <FlexboxLayout class="page-header" flexDirection="column">
+            <GridLayout rows="auto" columns="*" class="top-header">
+                <Image src="~/images/logo.png" width="50" horizontalAlignment="left"></Image>
+                <Label col="0" text="ROMS"></Label>
+            </GridLayout>
+            <Label text="{{date}}"></Label>
+        </FlexboxLayout> -->
+
+        <GridLayout rows="auto" columns="40,*" padding="15 10" class="header">
+            <!-- <Label  class="fa menu" text="&#xf0c9;"></Label> -->
+            <Label col="0" row="0" class="fa" text="&#xf053;" (tap)="back()" verticalAlignment="center" fontSize="20"></Label>
+            <GridLayout rows="auto" columns="*" col="1" row="1">
+                <Label row="0" col="0" text="roms dashboard" class="uppercase headtitle"></Label>
+                <Image src="~/images/logoroms.png" class="headlogo"></Image>
+                
+            </GridLayout>
+        </GridLayout>
+        <Label text="Current Month: {{ date }}" textAlignment="center" fontSize="16" padding="8 8" color="#555"></Label>
+        <Label class="hr-light"></Label>
+
+        <!-- Date Picker Row -->
+        <GridLayout rows="auto" columns="60,100,30,100,*" class="date-row">
+            <Label col="0" text="From"></Label>
+            <DatePickerField dateFormat="yyyy-MM-dd" [(ngModel)]="fromDate" col="1" hint="Select Date" fontSize="14"></DatePickerField>
+            <Label col="2" text="To"></Label>
+            <DatePickerField dateFormat="yyyy-MM-dd" [(ngModel)]="toDate" col="3" hint="Select Date" fontSize="14"></DatePickerField>
+            <Label col="4" class="fa" text="&#xf002;" textAlignment="center" fontSize="18"
+                (tap)="searchData()"></Label>
+        </GridLayout>
+
+        <StackLayout class="info-table">
+            <GridLayout rows="auto" columns="40,*,*,50" class="table-head">
+                <Label col="1" text="Agency" textAlignment="left"></Label>
+                <Label col="2" text="Business" textAlignment="left"></Label>
+            </GridLayout>
+
+            <StackLayout class="table-body" height="100%">
+                <ScrollView orientation="vertical">
+                    <StackLayout> 
+                        <GridLayout rows="auto" columns="40,*,*,50" class="table-row" 
+                        *ngFor="let data of listData" 
+                        (tap)="detail(data.AG_NAME)">
+                        <Label col="0" class="fa" text="&#xf007;" textAlignment="center"></Label>
+                        <Label col="1" text="{{ data.AG_NAME }}"  class="ogname" textWrap="true"  textAlignment="left"></Label>
+                        <Label col="2" text="{{ data.GTOTAL }}"  class="ogname" textWrap="true"  textAlignment="left" ></Label>
+                        <Label col="3" class="fa" text="&#xf067;"></Label>
+                    </GridLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>  
+</StackLayout>
+
+<GridLayout rows="*" columns="*" width="100%" height="100%" *ngIf="myLoader">
+  <ActivityIndicator  busy="true" width="40" height="40" class="activity-indicator"></ActivityIndicator>
+</GridLayout>
+
+</GridLayout>
+

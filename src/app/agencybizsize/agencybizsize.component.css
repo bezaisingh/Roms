@@ -1,0 +1,17 @@
+.table-row Label{text-align: center;}
+.total-row {
+    background-color: #34d391;
+    color: #fff;
+    padding: 12 0;
+    font-size: 18;
+    margin-bottom: 6;
+}
+.total-row Label{text-align: center;}
+.date-row {
+    font-size: 16;
+    border-color: #000;
+    padding: 0 4;
+    border-bottom-color: #ccc;
+    border-bottom-width: 1;
+}
+.date-row Label{vertical-align: center; text-align: center;}

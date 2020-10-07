@@ -1,0 +1,76 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+-->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+-->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Featured"></Label>
+</ActionBar>
+
+<GridLayout rows="*" columns="*" *ngIf="datas" class="pdtop24">
+    <StackLayout class="page page-content" row="0" col="0">
+        <FlexboxLayout class="page-header" flexDirection="column">
+            <GridLayout rows="auto" columns="*" class="detail-header">
+                <Label class="fa" fontSize="20" text="&#xf053;" horizontalAlignment="left" verticalAlignment="center" (tap)="back()"></Label>
+                <!-- <Label col="0" text="{{datas.SNO}}"></Label> -->
+                <Label text="From: {{ fromDate }}, To: {{ toDate }}" fontSize="14"></Label>
+            </GridLayout>
+        </FlexboxLayout>
+
+        <StackLayout class="info-table" *ngIf="datas">
+            <GridLayout rows="auto" columns="*,*,*" class="table-head">
+                <Label col="0" text="#" textAlignment="left" paddingLeft="30"></Label>
+                <Label col="1" text="Number" textAlignment="center"></Label>
+                <Label col="2" text="Business" textAlignment="center"></Label>
+            </GridLayout>
+
+            <StackLayout class="table-body detail-tabel-body" height="100%">
+                <ScrollView orientation="vertical">
+                    <StackLayout>
+                        <GridLayout rows="auto" columns="*,*,*" class="table-row">
+                            <Label col="0" text="Tender" textAlignment="left" paddingLeft="15"></Label>
+                            <Label col="1" text="{{datas.Tender_Nos}}"></Label>
+                            <Label col="2" text="{{datas.Tender_Business}}"></Label>
+                        </GridLayout>
+
+                        <GridLayout rows="auto" columns="*,*,*" class="table-row">
+                            <Label col="0" text="Op. Notice" textAlignment="left" paddingLeft="15"></Label>
+                            <Label col="1" text="{{datas.Notice_Operational_Nos}}"></Label>
+                            <Label col="2" text="{{datas.Notice_Operational_Business}}"></Label>
+                        </GridLayout>
+
+                        <GridLayout rows="auto" columns="*,*,*" class="table-row">
+                            <Label col="0" text="NOp Notice" textAlignment="left" paddingLeft="15"></Label>
+                            <Label col="1" text="{{datas.Notice_NonOperational_Nos}}"></Label>
+                            <Label col="2" text="{{datas.Notice_NonOperational_Business}}"></Label>
+                        </GridLayout>
+
+                        <GridLayout rows="auto" columns="*,*,*" class="table-row">
+                            <Label col="0" text="Display" textAlignment="left" paddingLeft="15"></Label>
+                            <Label col="1" text="{{datas.Display_Nos}}"></Label>
+                            <Label col="2" text="{{datas.Display_Business}}"></Label>
+                        </GridLayout>
+
+                        <GridLayout rows="auto" columns="*,*,*" class="table-row">
+                            <Label col="0" text="Total" textAlignment="left" paddingLeft="15"></Label>
+                            <Label col="1" text="{{datas.Total_Nos}}"></Label>
+                            <Label col="2" text="{{datas.GTOTAL}}"></Label>
+                        </GridLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</GridLayout>
+
+<GridLayout rows="*" columns="*" width="100%" height="100%" *ngIf="myLoader">
+    <ActivityIndicator busy="true" width="40" height="40" class="activity-indicator"></ActivityIndicator>
+</GridLayout>

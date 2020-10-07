@@ -1,0 +1,17 @@
+.headtitle{font-size: 18; font-weight: 500; color: #0266b1; text-align: center;}
+.headlogo{width: 30;}
+.dashboardPage{background-color: #f2f2ff;}
+.menu{vertical-align: center; horizontal-align: center; font-size: 24; color: #0266b1}
+.headlogo{horizontal-align: left; vertical-align: center; margin-left: 30;}
+.monthname{font-size: 30; text-align: center; font-weight: 500; color: #fff;}
+.monthsmall{font-size: 16; text-align: center; color: #fff;}
+.monthdisplay{padding: 50 0; background-image: linear-gradient(45deg, rgba(194,6,196,1) 0%, rgba(87,2,105,1) 100%)}
+.dashboardItemsrow{padding-left: 8; padding-right: 8; margin-bottom: 15;}
+.dashheadimg{width: 24;}
+.dashboardItems1{background-color: #02a473;}
+.dashheadtext{font-size: 24; font-weight: 500; text-align: center; margin-bottom: 6;}
+.dashboardItems2{background-color: #ef3536; }
+.dashboardItemsSkin{border-radius: 10; padding: 15 0;color: #fff; height: 140;}
+.dashboardItems3{background-color: #222222;}
+.dashboardItems4{background-color: #009a90;}
+.dashboardItems4 .dashheadimg{width: 28;}

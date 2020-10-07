@@ -1,0 +1,87 @@
+<GridLayout rows="*" columns="*" class="dashboardPage pdtop24">
+    <StackLayout row="0" col="0">
+        <GridLayout rows="auto" columns="40,*" padding="15 10">
+            <!-- <Label col="0" row="0" class="fa menu" text="&#xf0c9;"></Label> -->
+            <GridLayout rows="auto" columns="*" col="1" row="1">
+                <Label row="0" col="0" text="roms dashboard" class="uppercase headtitle"></Label>
+                <Image src="~/images/logoroms.png" class="headlogo"></Image>
+            </GridLayout>
+        </GridLayout>
+        <GridLayout rows="auto">
+            <ScrollView row="0" orientation="vertical">
+                <StackLayout>
+                    <StackLayout class="monthdisplay">
+                        <Label text="{{ tender?.monthCurrent }}" class="uppercase monthname"></Label>
+                        <Label text="(Current month)" class="monthsmall"></Label>
+                    </StackLayout>
+                    <GridLayout rows="auto,auto" columns="*,*" paddingTop="15">
+                        <GridLayout row="0" col="0" rows="auto" columns="*" class="dashboardItemsrow">
+                            <StackLayout>
+                                <StackLayout class="dashboardItems1 dashboardItemsSkin">
+                                    <Image src="~/images/done.png" class="dashheadimg"></Image>
+                                    <Label text="tender" class="dashheadtext uppercase"></Label>
+                                    <FlexboxLayout justifyContent="center">
+                                        <GridLayout rows="auto,auto" columns="62,*" width="100%" class="px-15">
+                                            <Label row="0" col="0" text="Number"></Label>
+                                            <Label row="0" col="1" text="{{ tender?.Tender_Nos }}"></Label>
+                                            <Label row="1" col="0" text="Business"></Label>
+                                            <Label row="1" col="1" text="{{ tender?.Tender_Business }}"></Label>
+                                        </GridLayout>
+                                    </FlexboxLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </GridLayout>
+
+                        <GridLayout row="0" col="1" rows="auto" columns="*" class="dashboardItemsrow">
+                            <StackLayout class="dashboardItems2 dashboardItemsSkin">
+                                <Image src="~/images/dtwo.png" class="dashheadimg"></Image>
+                                <Label text="notice" class="dashheadtext uppercase"></Label>
+                                <FlexboxLayout justifyContent="center">
+                                    <GridLayout rows="auto,auto" columns="62,*" width="100%" class="px-15">
+                                        <Label row="0" col="0" text="Number"></Label>
+                                        <Label row="0" col="1" text="{{ notice?.Notice_Nos }}"></Label>
+                                        <Label row="1" col="0" text="Business"></Label>
+                                        <Label row="1" col="1" text="{{ notice?.Notice_Business }}"></Label>
+                                    </GridLayout>
+                                </FlexboxLayout>
+                            </StackLayout>
+                        </GridLayout>
+
+                        <GridLayout row="1" col="0" rows="auto" columns="*" class="dashboardItemsrow">
+                            <StackLayout class="dashboardItems3 dashboardItemsSkin">
+                                <Image src="~/images/tv.png" class="dashheadimg"></Image>
+                                <Label text="display" class="dashheadtext uppercase"></Label>
+                                <FlexboxLayout justifyContent="center">
+                                    <GridLayout rows="auto,auto" columns="62,*" width="100%" class="px-15">
+                                        <Label row="0" col="0" text="Number"></Label>
+                                        <Label row="0" col="1" text="{{ display?.Display_Nos }}"></Label>
+                                        <Label row="1" col="0" text="Business"></Label>
+                                        <Label row="1" col="1" text="{{ display?.Display_Business }}"></Label>
+                                    </GridLayout>
+                                </FlexboxLayout>
+                            </StackLayout>
+                        </GridLayout>
+
+                        <GridLayout row="1" col="1" rows="auto" columns="*" class="dashboardItemsrow"
+                            (tap)="clikNavigate()">
+                            <StackLayout class="dashboardItems4 dashboardItemsSkin">
+                                <Image src="~/images/globe.png" class="dashheadimg"></Image>
+                                <Label text="Agency" class="dashheadtext uppercase" marginBottom="0"></Label>
+                                <Label text="wise" class="dashheadtext uppercase"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+        </GridLayout>
+
+    </StackLayout>
+
+
+
+    <AbsoluteLayout class="loader" *ngIf="myLoader">
+        <GridLayout rows="*" columns="*" width="100%" height="100%">
+            <ActivityIndicator busy="true" width="40" height="40" class="activity-indicator"></ActivityIndicator>
+        </GridLayout>
+    </AbsoluteLayout>
+</GridLayout>

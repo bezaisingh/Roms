@@ -1,0 +1,29 @@
+<GridLayout rows="*" columns="*" backgroundColor="#f2f2f2" class="pdtop24">
+    <ScrollView orientation="vertical" row="0">
+        <StackLayout paddingTop="80" paddingBottom="80">
+            <Image src="~/images/logo.png" class="logo"></Image>
+            <Label text="Welcome to ROMS" class="text-center logoName"></Label>
+            <StackLayout width="300" marginTop="40">
+                <GridLayout rows="auto" columns="*">
+                    <TextField row="0" [(ngModel)]="loginData.username" hint="username" class="usertextfield">
+                    </TextField>
+                    <Label class="fa icon" text="&#xf007;"></Label>
+                </GridLayout>
+                <GridLayout rows="auto" columns="*">
+                    <TextField row="0" [(ngModel)]="loginData.password" hint="password" secure="true"
+                        class="usertextfield"></TextField>
+                    <Label class="fa icon" text="&#xf023;"></Label>
+                </GridLayout>
+                <Label text="LOGIN" (tap)="login()" class="login-btn"></Label>
+                <Label [text]="error" class="errormsg" *ngIf="error"></Label>
+                <Label text="Plese Enter Username & Password!" class="errormsg" *ngIf="blankError"></Label>
+            </StackLayout>
+            <!-- <Label dock="right" text="Forgot Password?" class="forgotLink"></Label> -->
+
+        </StackLayout>
+    </ScrollView>
+
+    <GridLayout rows="*" columns="*" width="100%" height="100%" *ngIf="myLoader">
+        <ActivityIndicator busy="true" width="40" height="40" class="activity-indicator"></ActivityIndicator>
+    </GridLayout>
+</GridLayout>
